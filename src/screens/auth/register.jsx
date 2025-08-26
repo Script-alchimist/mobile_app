@@ -1,12 +1,14 @@
-import { View, Text, StyleSheet, TouchableOpacity, CheckBox } from 'react-native';
+import { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import CustomInput from '../../components/custom_input';
 import AuthButton from '../../components/auth_button'; 
 
 const RegisterScreen = ({ navigation }) => {
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
-        <Text style={styles.inscriptionText}>Inscription</Text>
       </View>
       <View style={styles.bottomSection}>
         <CustomInput placeholder="Nom" />
@@ -15,12 +17,25 @@ const RegisterScreen = ({ navigation }) => {
         <CustomInput placeholder="Entrez un mot de passe" secureTextEntry={true} />
         <CustomInput placeholder="Confirmer le mot de passe" secureTextEntry={true} />
         <View style={styles.checkboxContainer}>
-          <CheckBox style={styles.checkbox} value={false} />
-          <Text style={styles.label}>J'ai lu et j'accepte les conditions générales</Text>
+          <BouncyCheckbox
+            size={25}
+            fillColor="red"
+            unfillColor="red"
+            text="Accepter les termes et conditions"
+            textStyle={{
+              color: 'white'
+            }}
+            iconStyle={{ borderColor: "red" }}
+            innerIconStyle={{ borderWidth: 2 }}
+            onPress={(isChecked) => {
+              setIsChecked(isChecked);
+              console.log(isChecked ? 'Coché' : 'Décoché');
+            }}
+          />
         </View>
-        <AuthButton title="S'inscrire" onPress={() => {}} />
+        <AuthButton title="S'inscrire" onPress={() => {navigation.navigate('Tabnavigate')}} />
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.loginText}>Vous avez déjà un compte ? Connexion</Text>
+          <Text style={styles.loginText}>Vous avez déjà un compte ? <Text style={{color:'yellow'}}>Connexion</Text></Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -43,12 +58,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   bottomSection: {
-    flex: 2.5,
-    backgroundColor: 'white',
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
+    flex: 5,
+    backgroundColor: '#5D5D5C',
+    borderTopRightRadius: 70,
     paddingTop: 30,
     paddingBottom: 20,
+    gap: 10,
   },
   checkboxContainer: {
     flexDirection: 'row',
@@ -56,16 +71,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignItems: 'center',
   },
-  checkbox: {
-    alignSelf: 'center',
-  },
   label: {
     margin: 8,
   },
   loginText: {
     textAlign: 'center',
     marginTop: 20,
-    color: 'red',
+    color: 'white',
   },
 });
 

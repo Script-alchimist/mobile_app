@@ -9,11 +9,6 @@ const OnboardingScreen1 = ({ navigation }) => {
       <View style={styles.overlay}>
         <Text style={styles.title}>Bienvenue à bord ! Votre voyage commence maintenant.</Text>
       </View>
-      <View>
-        <Text>
-          
-        </Text>
-      </View>
       <TouchableOpacity
         style={styles.skipButton}
         onPress={() => navigation.navigate('Onboarding2')} // Navigate to the next screen
@@ -28,15 +23,16 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
+    paddingBottom:50,
     justifyContent: 'flex-start',
   },
   overlay: {
     backgroundColor: '#FFD700',//rgba(226, 251, 0, 0.5) 
     padding: 20,
-    paddingTop: 80, 
+    paddingTop: 20, 
   },
   title: {
-    color: 'black',
+    color: 'red',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
@@ -47,9 +43,9 @@ const styles = StyleSheet.create({
   },
   skipButton: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 40,
     right: 20,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+    backgroundColor: 'rgba(255, 7, 7, 0.3)', 
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 25,

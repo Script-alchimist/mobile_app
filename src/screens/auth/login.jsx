@@ -5,9 +5,6 @@ import AuthButton from '../../components/auth_button';
 const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.topSection}>
-        <Text style={styles.connexionText}>Connexion</Text>
-      </View>
       <View style={styles.bottomSection}>
         <CustomInput placeholder="Email ou numéro de téléphone" />
         <CustomInput placeholder="Mot de passe" secureTextEntry={true} />
@@ -19,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.registerText}>Vous n'avez pas de compte ? S'inscrire</Text>
+          <Text style={styles.registerText}>Vous n'avez pas de compte ? <Text style={{color:'yellow'}}>S'inscrire</Text></Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -43,11 +40,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   bottomSection: {
-    flex: 5,
+    flex: 4,
     backgroundColor: 'rgb(93, 93, 92)',
-    borderTopRightRadius: 60,
+    borderTopRightRadius: 100,
     paddingTop: 30,
     paddingBottom: 20,
+    marginTop: 80,
     gap: 15,
   },
   forgotPassword: {
