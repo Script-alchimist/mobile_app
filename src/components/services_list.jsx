@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Services } from '../utils/utils';
 
+
 const ServiceItem = ({ title, iconName, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.itemContainer}>
     <Ionicons name={iconName} size={24} color="black" style={styles.itemIcon} />
@@ -10,9 +11,6 @@ const ServiceItem = ({ title, iconName, onPress }) => (
 );
 
 const ServicesList = () => {
-  const handleItemPress = (itemTitle) => {
-    alert(`Vous avez cliqué sur : ${itemTitle}`);
-  };
 
   return (
     <View style={styles.listContainer}>
@@ -21,7 +19,7 @@ const ServicesList = () => {
           key={item.id}
           title={item.title}
           iconName={item.icon}
-          onPress={() => handleItemPress(item.title)}
+          onPress={() => navigation.navigate(item.screen)}
         />
       ))}
     </View>

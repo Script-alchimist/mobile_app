@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: '100%', // Adjust size of the image as needed
+    width: '100%', 
     height: '100%',
   },
   bottomSection: {
     flex: 1,
-    backgroundColor: '#FFD700', // Yellow color for the bottom half as well
+    backgroundColor: '#FFD700', 
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,

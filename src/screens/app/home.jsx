@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import ServicesList from '../../components/services_list';
 import Header  from '../../components/header';
 import Billeterie from './billeterie';

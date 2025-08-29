@@ -2,10 +2,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screens/app/home';
-import StoryScreen from '../screens/app/story';
-import HelperScreen from '../screens/app/helper';
+import HistoryScreen from '../screens/app/story';
+import HelpScreen from '../screens/app/helper';
 import ProfilScreen from '../screens/app/profil';
-import { TrackingScreen } from '../screens/app/followup';
+import TrackingScreen  from '../screens/app/followup';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,10 +40,10 @@ export const TabNavigator = () => {
       }
     >
       <Tab.Screen name="Accueil" component={HomeScreen} />
-      <Tab.Screen name="Historique" component={StoryScreen} />
-      <Tab.Screen name="Aide" component={HelperScreen} />
+      <Tab.Screen name="Historique" component={HistoryScreen} />
+      <Tab.Screen name="Aide" component={HelpScreen} />
       <Tab.Screen name="Suivi" component={TrackingScreen} />
-      <Tab.Screen name="Profil" component={ProfilScreen} />
+      <Tab.Screen name="Profil" component={ProfilScreen}/>
     </Tab.Navigator>
   );
 };

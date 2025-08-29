@@ -41,7 +41,7 @@ const CompanyDetailScreen = () => {
             mollit anim id est laborum.
           </Text>
         </ScrollView>
-        <TouchableOpacity style={styles.reservationButton}>
+        <TouchableOpacity style={styles.reservationButton} onPress={()=>navigation.navigate('Reservation')}>
           <Text style={styles.reservationButtonText}>Faire une réservation</Text>
         </TouchableOpacity>
       </View>
