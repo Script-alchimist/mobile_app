@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const DeliveryOrderScreen = ({ navigation }) => {
+const ExpeditionOrderScreen = ({ navigation }) => {
   // 1. Gestion de l'état pour chaque champ
   const [collectAddress, setCollectAddress] = useState('');
   const [deliveryAddress, setDeliveryAddress] = useState('');
@@ -35,7 +35,7 @@ const DeliveryOrderScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Commande de livraison</Text>
+        <Text style={styles.headerTitle}>Commande d'expedition</Text>
       </View>
       
       {/* Contenu principal */}
@@ -130,4 +130,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DeliveryOrderScreen;
+export default ExpeditionOrderScreen;

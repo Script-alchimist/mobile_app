@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import { Ionicons } from '@expo/vector-icons';
 import { Services } from '../utils/utils';
 
@@ -11,7 +12,7 @@ const ServiceItem = ({ title, iconName, onPress }) => (
 );
 
 const ServicesList = () => {
-
+  const navigation = useNavigation()
   return (
     <View style={styles.listContainer}>
       {Services.map((item) => (

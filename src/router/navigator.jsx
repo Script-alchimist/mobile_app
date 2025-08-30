@@ -12,7 +12,9 @@ import ReservationScreen from '../screens/app/reservation';
 import PaymentAndValidationScreen from '../screens/app/payment'
 import PaymentManageScreen from '../screens/app/paymanage'
 import PaymentValidatedScreen from '../screens/app/validpayment';
-import DeliveryOrderScreen from '../screens/app/deliver';
+import ExpeditionOrderScreen from '../screens/app/deliver';
+import DeliveryOrderScreen from '../screens/app/orderdeliver';
+import PressingScreen from '../screens/app/pressing';
 
 const Stack = createStackNavigator();
 
@@ -40,7 +42,9 @@ const Navigator = () => {
         <Stack.Screen name='Payment' component={PaymentAndValidationScreen} options={{headerShadowVisible:false, headerShown:true}}/>
         <Stack.Screen name="Paymanage" component={PaymentManageScreen} options={{headerShadowVisible:false, headerShown:true}}/>
         <Stack.Screen name="Paymentvalid" component={PaymentValidatedScreen} options={{headerShown:false}}/>
-        <Stack.Screen name="Coammande de Livraison" component={DeliveryOrderScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="ExpeditionScreen" component={ExpeditionOrderScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Commande de Livraison" component={DeliveryOrderScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='PressingScreen' component={PressingScreen} options={{headerShown:true, headerShadowVisible:false, title:"Pressing"}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

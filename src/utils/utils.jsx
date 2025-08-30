@@ -41,9 +41,9 @@ const BusVip = [
 ]
 
 const Services = [
-  { id: '1', title: 'Expedition et livraison de colis', icon: 'bag-handle-outline', screen: 'DeliveryScreen' },
+  { id: '1', title: 'Expedition et livraison de colis', icon: 'bag-handle-outline', screen: 'ExpeditionScreen' },
   { id: '2', title: 'Services de pressing', icon: 'basket-outline', screen: 'PressingScreen' },
-  { id: '3', title: 'Mes Commandes', icon: 'cube-outline', screen: 'OrdersScreen' },
+  { id: '3', title: 'Mes Commandes', icon: 'cube-outline', screen: 'Commande de Livraison' },
 ];
 
 const ticketHistory = [
